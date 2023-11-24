@@ -7,7 +7,7 @@ export default function Todos(props) {
       <h3 className='my-3' >TodoList</h3>
       {props.ToDoList.length === 0 ? <h4>No task to do</h4> :
       props.ToDoList.map((todo)=>{
-        return <TodoItem todo={todo} key={todo.sNo} onDelete={props.onDelete} />
+        return (<TodoItem todo={todo} key={todo.sNo} onDelete={props.onDelete} />);
       })
       }
       

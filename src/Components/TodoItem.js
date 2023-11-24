@@ -13,12 +13,14 @@ export default function TodoItem(props) {
       console.error('Error updating todo:', error);
     });
   };
-  return (
+  return (<>
     <div>
       <h4>{`${props.todo.sNo} ${props.todo.title}`}</h4>
       <p>{props.todo.description}</p>
-      <button className='btn btn-sm btn-danger' onClick={()=>{props.onDelete(props.todo)}} >Delete</button>
+      <button className='btn btn-sm btn-danger' onClick={()=>{props.onDelete(props.todo)}} >Delete</button>&nbsp;
       <button className='btn btn-sm btn-danger'onClick={handleUpdate}>Update</button>
     </div>
+    <hr/>
+    </>
   )
 }
