@@ -24,7 +24,7 @@ export default function AddTodo(props) {
         }
     };
     return (
-        <div className='container my-3 p-3' style={{border:'1px solid red'}} >
+        <div className='container my-4 p-3' style={{boxShadow: '0px 0px 15px 0px #a5ffff',borderRadius: '10px'}} >
             <h3>Add a Work Item</h3>
             <form onSubmit={submit}>
                 <div className="form-group">

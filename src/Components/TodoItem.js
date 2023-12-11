@@ -7,15 +7,41 @@ export default function TodoItem(props) {
       background: "aliceblue",
     })
   }
+  const _style= {
+    h4:{
+      textDecoration:"underline"
+    },
+    div:{
+      padding:"10px 15px",
+      marginBottom:"10px",
+      borderLeft: "1px solid lightgray",
+      borderBottom: "1px solid black",
+      borderRadius:"5px",
+    },
+    buttonD:{
+      border:'1px solid red',
+      background:"none",
+      color:"red"
+    },
+    buttonU:{
+      border:'1px solid orange',
+      background:"none",
+      color:"orange"
+    },
+    buttonE:{
+      border:'1px solid green',
+      background:"none",
+      color:"green"
+    }
+  }
   return (<>
-    <div style={ItemStyle}>
-      <h4>{`${props.todo.sNo} ${props.todo.title}`}</h4>
+    <div style={{ ...ItemStyle, ..._style.div,wordWrap:"break-word" }}>
+      <h5 style={_style.h4}>{`${props.todo.sNo}. ${props.todo.title}`}</h5>
       <p>{props.todo.description}</p>
-      <button className='btn btn-sm btn-danger' onClick={()=>{props.onDelete(props.todo)}} >Delete</button>&nbsp;
-      { props.todo.status && <><button className='btn btn-sm btn-danger'onClick={()=>{props.onUpdate(props.todo)}}>Update</button>&nbsp;
-      <button className='btn btn-sm btn-danger'onClick={()=>{props.Done(props.todo); done();}}>Done</button></>}
+      <button className='btn btn-sm' onClick={()=>{props.onDelete(props.todo)}} style={_style.buttonD} >Delete</button>&nbsp;
+      { props.todo.status && <><button className='btn btn-sm'onClick={()=>{props.onUpdate(props.todo)}} style={_style.buttonU}>Update</button>&nbsp;
+      <button className='btn btn-sm'onClick={()=>{props.Done(props.todo); done();}} style={_style.buttonE}>Done</button></>}
     </div>
-    <hr/>
     </>
   )
 }
