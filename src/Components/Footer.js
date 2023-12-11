@@ -8,7 +8,7 @@ export default function Footer() {
   }
   return (
     <footer className='bg-dark text-light py-3' style={footerStyle}>
-      <p className='text-center'>CopyRight &copy; MyList.com</p>
+      <p className='text-center'>CopyRight &copy; MyList.com/ C.J.</p>
     </footer>
   )
 }
