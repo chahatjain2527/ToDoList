@@ -58,10 +58,11 @@ function useTodos() {
     };
 
     // 🔹 Mark as done
-    const markDone = (item) => {
+    const markDone = (item,flag) => {
+        console.log("Item=>",item," Flag=>",flag);
         const updatedTodos = appData.todos.map((t) => {
             if (t.sNo === item.sNo) {
-                return { ...t, status: false }; // safer & clearer
+                return { ...t, status: flag }; // safer & clearer
             }
             return t;
         });

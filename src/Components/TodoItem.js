@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 export default function TodoItem({ todo, index, onDelete, onUpdate, onDone }) {
-  console.log("Rendering TodoItem: ", new Date(todo.sNo).toDateString());
-
   // 🔹 Handle delete
   const handleDelete = () => {
     onDelete(todo);
@@ -14,8 +12,14 @@ export default function TodoItem({ todo, index, onDelete, onUpdate, onDone }) {
   };
 
   // 🔹 Handle done
-  const handleDone = () => {
-    onDone(todo);
+  const handleDone = (falg) => {
+    onDone(todo,falg);
+  };
+
+  const handleChange = (e) => {
+    const isChecked = e.target.checked;
+    console.log(isChecked);
+    handleDone(!isChecked)
   };
 
   return (
@@ -38,28 +42,30 @@ export default function TodoItem({ todo, index, onDelete, onUpdate, onDone }) {
     // </div>
 
     <div className="itemCardCls">
-
       <div className="topRow">
         <div className="textBlock">
-          <h4 style={{ textDecoration: todo.status ? 'none' : 'line-through' }}>{todo.title}</h4>
+          <h4 style={{ textDecoration: todo.status ? "none" : "line-through" }}>
+            {todo.title}
+          </h4>
           <p>{todo.description}</p>
         </div>
 
-        <input type="radio" onClick={handleDone} checked={!todo.status} className="taskRadio" />
+        <input type="checkbox" onChange={handleChange} checked={!todo.status} className="taskRadio" />
       </div>
 
       <hr className="separator" />
 
-        <div className="bottomRow">
-          <span className="dateTag">{todo.sNo ? new Date(todo.sNo).toDateString() : ''}</span>
-          {todo.status && (
+      <div className="bottomRow">
+        <span className="dateTag">
+          {todo.sNo ? new Date(todo.sNo).toDateString() : ""}
+        </span>
+        {todo.status && (
           <div className="actionBtns">
-            <button className="btn update" onClick={handleUpdate}>Update</button>
-            <button className="btn delete" onClick={handleDelete}>Delete</button>
+            <button className="btn update" onClick={handleUpdate}> Update </button>
+            <button className="btn delete" onClick={handleDelete}> Delete </button>
           </div>
-          )}
-        </div>
-
+        )}
+      </div>
     </div>
   );
 }

@@ -252,7 +252,34 @@ button:hover {
   flex-direction: column;
 }
 .taskRadio {
-  margin-top: 6px;
+  appearance: none;
+  width: 36px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.taskRadio::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.taskRadio:checked {
+  background: #61e546;
+}
+
+.taskRadio:checked::before {
+  transform: translateX(16px);
 }
 .separator {
   border: none;
