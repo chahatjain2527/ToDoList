@@ -1,47 +1,65 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-export default function TodoItem(props) {
-  let [ItemStyle,setItemStyle] = useState();
-  const done = () =>{
-    setItemStyle({
-      background: "aliceblue",
-    })
-  }
-  const _style= {
-    h4:{
-      textDecoration:"underline"
-    },
-    div:{
-      padding:"10px 15px",
-      marginBottom:"10px",
-      borderLeft: "1px solid lightgray",
-      borderBottom: "1px solid black",
-      borderRadius:"5px",
-    },
-    buttonD:{
-      border:'1px solid red',
-      background:"none",
-      color:"red"
-    },
-    buttonU:{
-      border:'1px solid orange',
-      background:"none",
-      color:"orange"
-    },
-    buttonE:{
-      border:'1px solid green',
-      background:"none",
-      color:"green"
-    }
-  }
-  return (<>
-    <div style={{ ...ItemStyle, ..._style.div,wordWrap:"break-word" }}>
-      <h5 style={_style.h4}>{`${props.todo.sNo}. ${props.todo.title}`}</h5>
-      <p>{props.todo.description}</p>
-      <button className='btn btn-sm' onClick={()=>{props.onDelete(props.todo)}} style={_style.buttonD} >Delete</button>&nbsp;
-      { props.todo.status && <><button className='btn btn-sm'onClick={()=>{props.onUpdate(props.todo)}} style={_style.buttonU}>Update</button>&nbsp;
-      <button className='btn btn-sm'onClick={()=>{props.Done(props.todo); done();}} style={_style.buttonE}>Done</button></>}
+export default function TodoItem({ todo, index, onDelete, onUpdate, onDone }) {
+  console.log("Rendering TodoItem: ", new Date(todo.sNo).toDateString());
+
+  // 🔹 Handle delete
+  const handleDelete = () => {
+    onDelete(todo);
+  };
+
+  // 🔹 Handle update
+  const handleUpdate = () => {
+    onUpdate(todo);
+  };
+
+  // 🔹 Handle done
+  const handleDone = () => {
+    onDone(todo);
+  };
+
+  return (
+    // <div className="itemCardCls">
+    //   <h4 style={{ textDecoration: todo.status ? 'none' : 'line-through' }}>{todo.title}</h4>
+
+    //   <p>{todo.description}</p>
+
+    //   {/* 🔹 Delete Button */}
+    //   <button className="btn delete" onClick={handleDelete} > Delete </button>
+    //   &nbsp;
+    //   {/* 🔹 Show Update & Done only if task is not completed */}
+    //   {todo.status && (
+    //     <>
+    //       <button className="btn update" onClick={handleUpdate} > Update </button>
+    //       &nbsp;
+    //       <button className="btn done" onClick={handleDone} > Done </button>
+    //     </>
+    //   )}
+    // </div>
+
+    <div className="itemCardCls">
+
+      <div className="topRow">
+        <div className="textBlock">
+          <h4 style={{ textDecoration: todo.status ? 'none' : 'line-through' }}>{todo.title}</h4>
+          <p>{todo.description}</p>
+        </div>
+
+        <input type="radio" onClick={handleDone} checked={!todo.status} className="taskRadio" />
+      </div>
+
+      <hr className="separator" />
+
+        <div className="bottomRow">
+          <span className="dateTag">{todo.sNo ? new Date(todo.sNo).toDateString() : ''}</span>
+          {todo.status && (
+          <div className="actionBtns">
+            <button className="btn update" onClick={handleUpdate}>Update</button>
+            <button className="btn delete" onClick={handleDelete}>Delete</button>
+          </div>
+          )}
+        </div>
+
     </div>
-    </>
-  )
+  );
 }
