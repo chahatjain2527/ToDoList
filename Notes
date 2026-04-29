@@ -5,8 +5,10 @@
 3. If local storage is not there then user can enter the name and also want then correct it 
 7. dark and light mode
 2. need to add functionality to move card upp and down as user want (later)
-8. user can update the logo as he want as in telegram
+8. user can update the logo as he want for example telegram
+9. if there is data and user click reset or logout then need confirmation first.
 
 9. need to add feature of timmer on task and if time come then can send notification of lock screen
 10. iphone and android logo diff
 11. when open app it took a bit time to open and for that time another logo come 
+
