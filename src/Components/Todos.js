@@ -9,7 +9,7 @@ export default function Todos({ todos, onDelete, onUpdate, onDone }) {
 
       {/* 🔹 If no todos, show message */}
       {todos.length === 0 ? (
-        <h4>You Don't Have Any Tasks</h4>
+        <h4>No Task, Please Add Task</h4>
       ) : (
         // 🔹 Render each todo item
         todos.map((todo, index) => (

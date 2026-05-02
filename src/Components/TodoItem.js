@@ -13,7 +13,7 @@ export default function TodoItem({ todo, index, onDelete, onUpdate, onDone }) {
 
   // 🔹 Handle done
   const handleDone = (falg) => {
-    onDone(todo,falg);
+    onDone(todo, falg);
   };
 
   const handleChange = (e) => {
@@ -59,12 +59,10 @@ export default function TodoItem({ todo, index, onDelete, onUpdate, onDone }) {
         <span className="dateTag">
           {todo.sNo ? new Date(todo.sNo).toDateString() : ""}
         </span>
-        {todo.status && (
-          <div className="actionBtns">
-            <button className="btn update" onClick={handleUpdate}> Update </button>
-            <button className="btn delete" onClick={handleDelete}> Delete </button>
-          </div>
-        )}
+        <div className="actionBtns">
+          <button style={{ display: todo.status ? "" : "none" }} className="btn update" onClick={handleUpdate}> Update </button>
+          <button className="btn delete" onClick={handleDelete}> Delete </button>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,14 @@
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+}
+
 #root {
   padding: 15px;
   background-color: #f4f6f8; /* softer background */
@@ -120,6 +131,21 @@ button {
   color: darkblue;
   font-size: 15px;
   box-shadow: 0 6px 14px rgba(59, 130, 246, 0.3);
+}
+
+.theme-toggle {
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #f9fafb;
 }
 
 button:hover {
@@ -246,12 +272,22 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 12px;
 }
 .itemCardCls .textBlock {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.itemCardCls .textBlock h4,
+.itemCardCls .textBlock p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 .taskRadio {
+  align-self: flex-start;
   appearance: none;
   width: 36px;
   height: 20px;
