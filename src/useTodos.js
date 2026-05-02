@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { json } from "react-router-dom";
 
 function useTodos() {
 
@@ -76,6 +77,11 @@ function useTodos() {
         }));
     };
     const resetData = () => {
+        debugger;
+        var data = JSON.parse(localStorage.getItem("appData"));
+        if(data && data.todos && data.todos.length > 0) {
+            if (!window.confirm("Reset will clear all your tasks and log you out. Are you sure?")) return;
+        }
         localStorage.removeItem("appData");
         setAppData({ user: null, todos: [] });
     };
