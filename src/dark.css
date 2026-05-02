@@ -1,0 +1,127 @@
+/* Dark theme overrides for your app.
+   Import this file once in index.js and toggle the "dark-theme" class on body.
+*/
+
+body.dark-theme {
+  background-color: #0b1220;
+  color: #e2e8f0;
+}
+
+body.dark-theme #root {
+  background-color: #0b1220;
+}
+
+body.dark-theme .header {
+  background-color: #111827;
+  border-color: #334155;
+}
+
+body.dark-theme .header h2,
+body.dark-theme .header p {
+  color: #e2e8f0;
+}
+
+body.dark-theme .newTaskCls {
+  background: #2563eb;
+  color: #f8fafc;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}
+
+body.dark-theme .container.listCls {
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid #334155;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .container.listCls h3 {
+  color: #f8fafc;
+}
+
+body.dark-theme .itemCardCls {
+  background: #111827;
+  border-color: #1f2937;
+}
+
+body.dark-theme .itemCardCls h4 {
+  color: #f8fafc;
+}
+
+body.dark-theme .itemCardCls p,
+body.dark-theme .dateTag {
+  color: #94a3b8;
+}
+
+body.dark-theme .itemCardCls button {
+  background: #1f2937;
+  color: #e2e8f0;
+}
+
+body.dark-theme .itemCardCls .delete {
+  background-color: #dc2626;
+}
+
+body.dark-theme .itemCardCls .update {
+  background-color: #2563eb;
+}
+
+body.dark-theme .itemCardCls .done {
+  background-color: #16a34a;
+}
+
+body.dark-theme button {
+  background: #1f2937;
+  color: #e2e8f0;
+}
+
+body.dark-theme button:hover {
+  filter: brightness(1.05);
+}
+
+body.dark-theme .popup-overlay {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+body.dark-theme .popup-box {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-theme .startScreenContainer {
+  background-color: #0b1220;
+}
+
+body.dark-theme .startScreenContainer button {
+  background: #2563eb;
+  color: #f8fafc;
+}
+
+body.dark-theme .startScreenContainer input {
+  background: #1f2937;
+  color: #e2e8f0;
+}
+
+body.dark-theme .theme-toggle {
+  background: #1f2937;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+body.dark-theme .theme-toggle:hover {
+  background: #374151;
+}
+
+body.dark-theme .separator {
+  border-top-color: #334155;
+}
+
+body.dark-theme .taskRadio {
+  background: #475569;
+}
+
+body.dark-theme .taskRadio::before {
+  background: #e2e8f0;
+}
+
+body.dark-theme .taskRadio:checked {
+  background: #22c55e;
+}

@@ -2,13 +2,17 @@ import Todos from "./Components/Todos";
 import AddTodo from "./Components/AddTodo";
 import useTodos from "./useTodos";
 import StartScreen from "./Components/StartScreen";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const { appData, editTodo, saveTodo, deleteTodo, updateTodo, markDone, saveUser, setEditTodo, resetData} = useTodos();
   const [showPopup, setShowPopup] = useState(false);
   const [todayDate, setTodayDate] = useState(new Date());
+  const [isDark, setIsDark] = useState(false);
 
+  useEffect(() => {
+    document.body.classList.toggle('dark-theme', isDark);
+  }, [isDark]);
 
   if (!appData.user) {
     return <StartScreen onSave={saveUser} />
@@ -20,7 +24,12 @@ function App() {
         <p>{todayDate.toDateString()}</p>
       </div>
 
-      <button className="newTaskCls" onClick={() => setShowPopup(true)} > + New Task </button>
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <button onClick={() => setIsDark(!isDark)} className="theme-toggle">
+          {isDark ? '☀️ Light' : '🌙 Dark'}
+        </button>
+        <button className="newTaskCls" onClick={() => setShowPopup(true)} > + New Task </button>
+      </div>
     </div>
     {showPopup && (
       <div className="popup-overlay">

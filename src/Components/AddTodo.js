@@ -32,7 +32,7 @@ export default function AddTodo({ saveTodo, editTodo }) {
 
   return (
     <div className="container my-3 p-3" style={{ border: "1px solid red" }}>
-      <h3>Task Details</h3>
+      <h3>{editTodo ? "Update" : "Add"} Task</h3>
 
       <form onSubmit={handleSubmit}>
         <div className="row">
