@@ -3,12 +3,12 @@
   "name": "TaskTrail",
   "icons": [
     {
-      "src": "png_6.png",
+      "src": "appIcon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "png_6.png",
+      "src": "appIcon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
