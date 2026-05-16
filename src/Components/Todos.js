@@ -13,7 +13,6 @@ export default function Todos({ todos, onDelete, onUpdate, onDone, onFavorite })
       ) : (
         // 🔹 Render each todo item
         todos.map((todo, index) => (
-          console.log("TodoItem=>",todo),
           <TodoItem key={todo.sNo} index={index} todo={todo} onDelete={onDelete} onUpdate={onUpdate} onDone={onDone} onFavorite={onFavorite} />
         ))
       )}

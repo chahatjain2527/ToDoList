@@ -18,7 +18,6 @@ export default function TodoItem({ todo, index, onDelete, onUpdate, onDone, onFa
 
   const handleChange = (e) => {
     const isChecked = e.target.checked;
-    console.log(isChecked);
     handleDone(!isChecked)
   };
 
