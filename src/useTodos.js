@@ -25,7 +25,7 @@ function useTodos() {
             if(a.status !== b.status) { //done task comes last
                 return b.status - a.status;
             }
-            return new Date(b.sNo) - new Date(a.sNo); // newer task comes first
+            return b.sNo - a.sNo; // newer task comes first
         });
         //setAppData(prev => ({ ...prev, todos: sortedData }));
         const isDifferent =
